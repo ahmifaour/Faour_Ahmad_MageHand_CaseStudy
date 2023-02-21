@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css"
+	href="/styles/createaccountstyle.css">
+<title>Mage-Hand Repository Create An Account</title>
+</head>
+<body>
+	<div class="layout">
+		<h1>The Mage-Hand Repository</h1>
+		<header>Create Account</header>
+		<nav>
+			<a href="login.html">Login<br> <br> <br></a><a
+				href="Account.html">My Account<br> <br> <br></a><a
+				href="index.html">Home<br> <br> <br></a><a
+				href="Races.html">Races</a><br> <br> <br> <a
+				href="Classes.html">Classes<br> <br> <br></a><a
+				href="Spells.html">Spells<br> <br> <br></a><a
+				href="Items.html">Items<br> <br> <br></a><a
+				href="CharacterSheets.html">Character Sheets<br> <br>
+				<br></a>
+		</nav>
+		<section>
+			<div th:if="${param.success}">
+				<div class="alert alert-info">Login Successful</div>
+			</div>
+			<div>
+				<form method="post" role="form" th:action="@{/createAccount/save}"
+					th:object="${user}">
+					<div class="3">
+						<label class="label">First Name: </label> <input class="control"
+							id="fName" name="fName" placeholder="First Name"
+							th:field="*{fName}" type="text" />
+						<p th:errors="*{fName}" class="text-danger"
+							th:if="${#fields.hasErrors('fName')}"></p>
+					</div>
+
+					<div class="3">
+						<label class="label">Last Name: </label> <input class="control"
+							id="lName" name="lName" placeholder="Last Name"
+							th:field="*{lName}" type="text" />
+						<p th:errors="*{lName}" class="text-danger"
+							th:if="${#fields.hasErrors('lName')}"></p>
+					</div>
+
+					<div class="3">
+						<label class="label">Email: </label> <input class="control"
+							id="email" name="email" placeholder="Email Address"
+							th:field="*{email}" type="email" />
+						<p th:errors="*{email}" class="text-danger"
+							th:if="${#fields.hasErrors('email')}"></p>
+					</div>
+
+					<div class="3">
+						<label class="label">Password: </label> <input class="control"
+							id="password" name="password" placeholder="Enter password"
+							th:field="*{password}" type="password" />
+						<p th:errors="*{password}" class="text-danger"
+							th:if="${#fields.hasErrors('password')}"></p>
+					</div>
+				</form>
+			</div>
+			<button type="submit">Submit Fields</button>
+		</section>
+	</div>
+</body>
+</html>
