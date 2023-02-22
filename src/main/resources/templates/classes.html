@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" href="/styles/classstyle.css">
+<title>Mage-Hand Repository Classes</title>
+</head>
+<body>
+	<div class="layout">
+		<h1>The Mage-Hand Repository</h1>
+		<header>Classes</header>
+		<nav>
+			<button id="login-btn">Login</button>
+			<button id="account-btn">My Account</button>
+			<button id="home-btn">Home</button>
+			<button id="races-btn">Races</button>
+			<button id="classes-btn">Classes</button>
+			<button id="spells-btn">Spells</button>
+			<button id="items-btn">Items</button>
+			<button id="character-sheets-btn">Character Sheets</button>
+		</nav>
+		<section>
+			<table>
+				<thead>
+					<tr>
+						<th>Class Name</th>
+						<th>Class Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<th:block th:each="classes : ${listClasses}">
+						<tr>
+							<td>[[${classes.className}]]</td>
+							<td>[[${classes.classDesc}]]</td>
+						</tr>
+					</th:block>
+				</tbody>
+			</table>
+		</section>
+	</div>
+</body>
+</html>

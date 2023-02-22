@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css"
+	href="/styles/createaccountstyle.css">
+<script src="createnewuserscript.js"></script>
+<title>Mage-Hand Repository Create An Account</title>
+</head>
+<body>
+	<div class="layout">
+		<h1>The Mage-Hand Repository</h1>
+		<header>Create Account</header>
+		<nav>
+			<button id="login-btn" onclick="location.href='login'">Login</button>
+			<button id="account-btn" onclick="location.href='account'">My
+				Account</button>
+			<button id="home-btn" onclick="location.href='index'">Home</button>
+			<button id="races-btn" onclick="location.href='races'">Races</button>
+			<button id="classes-btn" onclick="location.href='classes'">Classes</button>
+			<button id="spells-btn" onclick="location.href='spells'">Spells</button>
+			<button id="items-btn" onclick="location.href='items'">Items</button>
+			<button id="character-sheets-btn"
+				onclick="location.href='charactersheets'">Character Sheets</button>
+		</nav>
+		<section>
+			<div th:if="${param.success}">
+				<div class="alert alert-info">Login Successful</div>
+			</div>
+			<div>
+				<form method="post" role="form" th:action="@{/createaccount/save}"
+					th:object="${user}">
+					<div class="3">
+						<label class="label">First Name: </label> <input class="control"
+							id="fName" name="fName" placeholder="First Name"
+							th:field="*{fName}" type="text" />
+						<p th:errors="*{fName}" class="text-danger"
+							th:if="${#fields.hasErrors('fName')}"></p>
+					</div>
+
+					<div class="3">
+						<label class="label">Last Name: </label> <input class="control"
+							id="lName" name="lName" placeholder="Last Name"
+							th:field="*{lName}" type="text" />
+						<p th:errors="*{lName}" class="text-danger"
+							th:if="${#fields.hasErrors('lName')}"></p>
+					</div>
+
+					<div class="3">
+						<label class="label">Email: </label> <input class="control"
+							id="email" name="email" placeholder="Email Address"
+							th:field="*{email}" type="email" />
+						<p th:errors="*{email}" class="text-danger"
+							th:if="${#fields.hasErrors('email')}"></p>
+					</div>
+
+					<div class="3">
+						<label class="label">Password: </label> <input class="control"
+							id="password" name="password" placeholder="Enter password"
+							th:field="*{password}" type="password" />
+						<p th:errors="*{password}" class="text-danger"
+							th:if="${#fields.hasErrors('password')}"></p>
+					</div>
+					<button type="submit">Submit Fields</button>
+				</form>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

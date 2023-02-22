@@ -1,0 +1,71 @@
+@charset "ISO-8859-1";
+.layout {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+	width: 1000px;
+}
+
+nav, section {
+  float: left;
+}
+
+nav {
+  width: 188px;
+  margin-right: 9px;
+}
+
+section {
+  width: 781px;
+}
+
+body {
+  background-size: cover;
+  color: solid black;
+  font-family: 'serif', serif;
+  font-variant: small-caps;
+  text-align: center;
+  margin: 0;
+}
+
+header, nav, section {
+  border: 1px solid black;
+  margin-bottom: 9px;
+  border-radius: 3px;
+}
+
+header {
+  padding: 19px 0;
+}
+
+nav {
+  padding: 180px 0;
+}
+
+div::first-letter {
+	text-transform: capitalize;
+}
+
+h1 {
+	
+	color: black;
+	border: 2px solid black;
+	border-radius: 6px;
+	background-color: #AB2330;
+	
+}
+
+header, nav, section {
+	background-color: #AB2330;
+}
+
+section {
+	padding: 10px 5px 5px 10px;
+}
+
+body {
+	background-image:
+		url("https://cdna.artstation.com/p/assets/images/images/013/418/340/large/samuel-couture-dnd-final.jpg?1539529091");
+}

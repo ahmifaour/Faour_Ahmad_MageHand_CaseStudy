@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" href="/styles/racestyle.css">
+<title>Mage-Hand Repository Races</title>
+</head>
+<body>
+	<div class="layout">
+		<h1>The Mage-Hand Repository</h1>
+		<header>Races</header>
+		<nav>
+			<button id="login-btn" onclick="location.href='login'">Login</button>
+			<button id="account-btn" onclick="location.href='account'">My
+				Account</button>
+			<button id="home-btn" onclick="location.href='index'">Home</button>
+			<button id="races-btn" onclick="location.href='races'">Races</button>
+			<button id="classes-btn" onclick="location.href='classes'">Classes</button>
+			<button id="spells-btn" onclick="location.href='spells'">Spells</button>
+			<button id="items-btn" onclick="location.href='items'">Items</button>
+			<button id="character-sheets-btn"
+				onclick="location.href='charactersheets'">Character Sheets</button>
+		</nav>
+		<section>
+			<table>
+				<thead>
+					<tr>
+						<th>Race Name</th>
+						<th>Race Description</th>
+						<th>Race Bonuses</th>
+					</tr>
+				</thead>
+				<tbody>
+					<th:block th:each="races : ${listRaces}">
+						<tr>
+							<td>[[${races.raceName}]]</td>
+							<td>[[${races.raceDesc}]]</td>
+							<td>[[${race.raceBonus}]]</td>
+						</tr>
+					</th:block>
+				</tbody>
+			</table>
+		</section>
+	</div>
+</body>
+</html>
